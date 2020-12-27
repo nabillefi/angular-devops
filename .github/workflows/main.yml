@@ -47,12 +47,12 @@ jobs:
       # - name : build docker image
       #   uses : actions-hub/docker/cli@master
       #   with :
-      #     args : build -t docker.pkg.github.com/${{ github.repository }}/angulardevops:0.1 .
+      #     args : build -t docker.pkg.github.com/${{ github.repository }}/angular-app20:0.1 .
 
       # - name: Push to github registry
       #   uses: actions-hub/docker@master
       #   with:
-      #     args: push docker.pkg.github.com/${{ github.repository }}/angulardevops:0.1    
+      #     args: push docker.pkg.github.com/${{ github.repository }}/angular-app20:0.1    
 
 
 
@@ -79,9 +79,9 @@ jobs:
             docker login --username=_ --password $HEROKU_TOKEN $HEROKU_REGISTRY_URL
             export HEROKU_API_KEY=$HEROKU_TOKEN
             heroku container:login
-            heroku container:push web --app angulardevops
-            heroku container:release web --app angulardevops
-            heroku ps:scale web=1 --app angulardevops
+            heroku container:push web --app angular-app20
+            heroku container:release web --app angular-app20
+            heroku ps:scale web=1 --app angular-app20
 
 
           
