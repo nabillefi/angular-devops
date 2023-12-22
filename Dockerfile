@@ -7,7 +7,7 @@ COPY . .
 RUN ng build --prod
 
 
-FROM nginx:1.17.5
+FROM nginx:1.25.3
 COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder  /app/dist/my-first-app /usr/share/nginx/html 
